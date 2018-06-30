@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sass'
 require_relative 'song.rb'
+require 'v8'
+require 'coffee-script'
 
 configure :development do
   DataMapper.setup(:default,"sqlite3://#{Dir.pwd}/development.rb")
@@ -17,8 +19,20 @@ configure do
   set :session_secret, '99f4eea00f32191ee279d1c75aa27b67'
 end
 
+# helpers do
+#   def css(*stylesheets)
+#     stylesheets.map do |stylesheet|
+#       "<link href=#{stylesheet}.css media='screen projection' rel='stylesheet'>"
+#     end.join
+#   end
+# end
+
 get '/styles.css' do
   scss :styles
+end
+
+get '/javascripts/application.js' do
+  coffee :application
 end
 
 get '/login' do
@@ -40,7 +54,6 @@ get '/logout' do
 end
 
 get '/' do
-  p session[:admin]
   erb :home
 end
 
