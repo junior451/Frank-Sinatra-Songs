@@ -110,3 +110,13 @@ delete '/songs/:id' do
   Song.get(params[:id]).destroy
   redirect to('/songs')
 end
+
+post '/songs/:id/like' do
+  @song = Song.get(params[:id])
+  @song.likes = @song.likes.next
+  @song.save
+  redirect to "/songs/#{@song.id}"
+  unless request.xhr?
+    erb :like
+  end
+end

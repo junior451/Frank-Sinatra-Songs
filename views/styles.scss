@@ -49,3 +49,16 @@ nav {
 p {
     font: 13px/1.4 $main-font;
 }
+
+#like {
+    p {
+        font-weight: bold;
+        color: $red;
+    }
+    input {
+        background: $red 2px no-repeat;
+        border: darken($red, 10%) 1px solid;
+        height: 28px;
+        padding-left: 24px;
+    }
+}

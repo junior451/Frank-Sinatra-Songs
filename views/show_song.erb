@@ -4,6 +4,13 @@
 <p>Lyrics</p>
 <%= @song.lyrics %>
 
+<div id="like">
+  <%= erb :like %>
+  <form action="/songs/<%= @song.id %>/like" method="post">
+    <input type="submit" value="like">
+  </form>
+</div>
+
 <p><a href="/songs">back to songs</a></p>
 <p><a href="/songs/<%= @song.id.to_s %>/edit">edit this song</a></p>
 

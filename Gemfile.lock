@@ -3,6 +3,10 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     daemons (1.2.6)
     data_objects (0.10.17)
       addressable (~> 2.1)
@@ -24,7 +28,9 @@ GEM
     do_sqlite3 (0.10.17)
       data_objects (= 0.10.17)
     eventmachine (1.2.7)
+    execjs (2.7.0)
     ffi (1.9.25)
+    libv8 (3.16.14.19)
     mustermann (1.0.2)
     pg (1.0.0)
     public_suffix (3.0.2)
@@ -34,6 +40,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ref (2.0.0)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -48,6 +55,9 @@ GEM
       temple (>= 0.7.6, < 0.9)
       tilt (>= 1.3.3, < 2.1)
     temple (0.8.0)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -58,6 +68,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coffee-script
   dm-core
   dm-migrations
   dm-postgres-adapter
@@ -66,6 +77,7 @@ DEPENDENCIES
   sass
   sinatra
   slim
+  therubyracer
   thin
 
 BUNDLED WITH
